@@ -6,6 +6,28 @@ function Post({ post }: any) {
   return (
     <div>
         <Header />
+
+        <img
+            className='w-full h-40 object-cover'
+            src={post.image}
+            alt={post.title}
+        />
+
+        <article className='max-w-3xl mx-auto p-5'>
+            <h1 className='text-3xl mt-10 mb-3'>{post.title}</h1>
+            <h2 className='text-xl font-light'>{post.description}</h2>
+            <div className='flex items-center space-x-2 mt-2'>
+                <img
+                    className='h-10 w-10 rounded-full'
+                    src={post.author.image}
+                    alt={post.author.name}
+                />
+                <p className='font-extralight text-sm'>Blog post by <span className='text-blue-600'>{post.author.name}</span> - Published at {new Date(post.createdAt).toLocaleDateString()}</p>
+            </div>
+            <p className='mt-10'>
+                {post.content}
+            </p>
+        </article>
     </div>
   )
 }
@@ -31,7 +53,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     }
 
     return {
-        props: { post }
+        props: { post },
+        revalidate: 60
     }
 }
 
