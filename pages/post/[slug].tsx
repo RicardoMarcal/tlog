@@ -28,6 +28,27 @@ function Post({ post }: any) {
                 {post.content}
             </p>
         </article>
+
+        <hr className='max-w-lg my-5 mx-auto border border-blue-500' />
+    
+        <form className='flex flex-col p-5 max-w-2xl mx-auto mb-10'>
+            <h3 className='text-sm text-blue-500'>Enjoyed the article?</h3>
+            <h4 className='text-3xl font-bold'>Leave a comment below!</h4>
+            <hr className='py-3 mt-2' />
+
+            <label className="block mb-5">
+                <span className='text-gray-700 '>Name</span>
+                <input className='shadow border rounded py-2 px-3 form-input mt-1 block w-full outline-none focus:ring ring-blue-500' placeholder="Solrin Planewalker" type="text" />
+            </label>
+            <label className="block mb-5">
+                <span className='text-gray-700 '>Email</span>
+                <input className='shadow border rounded py-2 px-3 form-input mt-1 block w-full outline-none focus:ring ring-blue-500' placeholder="solrin@planewalker.com" type="text" />
+            </label>
+            <label className="block mb-5">
+                <span className='text-gray-700 '>Comment</span>
+                <textarea className='shadow border rounded py-2 px-3 form-textarea mt-1 block w-full outline-none focus:ring ring-blue-500' placeholder="Your comment..." rows={8} />
+            </label>
+        </form>
     </div>
   )
 }
