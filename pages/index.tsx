@@ -1,10 +1,27 @@
 import Head from 'next/head'
-import { CLIENT_RENEG_WINDOW } from 'tls';
 import Header from '../components/Header'
 import posts from '../posts';
 import Post from '../components/Post';
+import { NextPage } from 'next';
 
-const Home = ({ posts }: any) => {
+type Post = {
+  title: string,
+  slug: string,
+  image: string,
+  description: string,
+  createdAt: string,
+  author: {
+    name: string,
+    image: string,
+  },
+  content: string
+}
+
+interface Props {
+  posts: Post[]
+}
+
+const Home: NextPage<Props> = ({ posts }) => {
   return (
     <div className="max-w-7xl mx-auto">
       <Head>
