@@ -9,7 +9,7 @@ type Post = {
   slug: string,
   image: string,
   description: string,
-  createdAt: string,
+  createdAt: Date,
   author: {
     name: string,
     image: string,
