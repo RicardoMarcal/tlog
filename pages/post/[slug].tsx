@@ -8,7 +8,7 @@ function Post({ post }: any) {
         <Header />
 
         <img
-            className='w-full h-40 object-cover'
+            className='w-full max-w-7xl h-40 mx-auto object-cover'
             src={post.image}
             alt={post.title}
         />
